@@ -10,7 +10,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 const DB ="mongodb+srv://admin:admin@cluster0.wjm6i.mongodb.net/?retryWrites=true&w=majority"
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -30,7 +30,7 @@ const server = app.listen(port, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5000",
     credentials: true,
   },
 });
