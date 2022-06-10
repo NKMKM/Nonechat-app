@@ -10,9 +10,9 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+const DB ="mongodb+srv://admin:admin@cluster0.wjm6i.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose
-  .connect(process.env.MONGO_URL, {
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
